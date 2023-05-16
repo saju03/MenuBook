@@ -1,11 +1,11 @@
 import {Outlet, RouterProvider, createBrowserRouter} from "react-router-dom";
 import './index.css'
-import Navbar from "./components/Navbar";
-import HomePage from "./pages/HomePage";
-import SignupPage from "./pages/SignupPage";
-import LoginPage from "./pages/LoginPage";
-import AdminLogin from "./pages/AdminLogin";
-import AdminDashboard from "./pages/AdminDashboard";
+import Navbar from "./components/navbar/Navbar";
+import HomePage from "./pages/userPages/HomePage";
+import SignupPage from "./pages/userPages/SignupPage";
+import LoginPage from "./pages/userPages/LoginPage";
+import AdminLogin from "./pages/adminPages/AdminLogin";
+import AdminDashboard from "./pages/adminPages/AdminDashboard";
 
 function App() {
   

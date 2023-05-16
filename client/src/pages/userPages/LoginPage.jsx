@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // eslint-disable-next-line no-unused-vars
 import axios from 'axios';
 import { useEffect, useState } from 'react'
@@ -13,7 +14,7 @@ function LoginPage() {
         password: "",
     });
 
-    const [cookies, , removeCookie] = useCookies();
+    const [cookies,setCookie , removeCookie] = useCookies();
 
     const navigate = useNavigate()
 

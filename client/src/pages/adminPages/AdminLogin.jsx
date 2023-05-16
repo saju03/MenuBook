@@ -47,7 +47,7 @@ function AdminLogin() {
     }
 
     
-    const verifyUser = async () => {
+    const verifyAdmin = async () => {
         const jwt = cookies;
         if (jwt.admin_jwt) {
             try {
@@ -68,7 +68,7 @@ function AdminLogin() {
 
 
     useEffect(() => {
-        verifyUser()
+        verifyAdmin()
     }, [])
   return (
     

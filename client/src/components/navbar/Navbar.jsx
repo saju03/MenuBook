@@ -1,10 +1,11 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react"
 import { useCookies } from "react-cookie"
-import { Link, useLocation , } from "react-router-dom"
+import { Link, useLocation, useNavigate , } from "react-router-dom"
 
 const Navbar = ()=>{
-    const [cookies, , removeCookie] = useCookies();
-
+    const [cookies, setCookie , removeCookie] = useCookies();
+    const navigate = useNavigate()
     const location = useLocation()
     const[isAdmin,setAdmin]= useState(false)
     const[userLoggedIn,setUserLogged] = useState(false)
@@ -24,6 +25,15 @@ const Navbar = ()=>{
         
     },[])
 
+    const logoutAdmin = (e)=>{
+        e.preventDefault()
+        removeCookie('admin_jwt')
+        navigate('/admin/login')
+    }
+    const logoutUser = (e)=>{
+        e.preventDefault()
+        removeCookie("user_jwt")
+    }
 
     return(
         <div>
@@ -37,7 +47,7 @@ const Navbar = ()=>{
         </a>
         <div className="flex items-center">
             <Link to="tel:5541251234" className="mr-6 text-sm  text-gray-500 dark:text-white hover:underline">(555) 412-1234</Link>
-            {isAdmin ? <Link to='/admin/login' className="text-sm  text-blue-600 dark:text-blue-500 hover:underline">{adminLoggedIn ? 'Logout' : 'Login'}</Link> : <Link to='/login' className="text-sm  text-blue-600 dark:text-blue-500 hover:underline">{userLoggedIn ? 'Logout' : 'Login'}</Link>}
+            {isAdmin ? <Link to='/admin/login' className="text-sm  text-blue-600 dark:text-blue-500 hover:underline" onClick={logoutAdmin}>{adminLoggedIn ? 'ALogout' : 'ALogin'}</Link> : <Link to='/login' className="text-sm  text-blue-600 dark:text-blue-500 hover:underline" onClick={logoutUser}>{userLoggedIn ? 'Logout' : 'Login'}</Link>}
           
         </div>
     </div>
@@ -47,11 +57,11 @@ const Navbar = ()=>{
         <div className="flex items-center">
             <ul className="flex flex-row font-medium mt-0 mr-6 space-x-8 text-sm">
                 <li>
-                    {isAdmin ?  <Link  className="text-gray-900 dark:text-white hover:underline" aria-current="page">view Menu</Link>: <Link href="#" className="text-gray-900 dark:text-white hover:underline" aria-current="page">Home</Link>}
+                    {isAdmin ?  <Link  className="text-gray-900 dark:text-white hover:underline" aria-current="page">Menu</Link>: <Link href="#" className="text-gray-900 dark:text-white hover:underline" aria-current="page">Home</Link>}
                     
                 </li>
                 <li>
-                {isAdmin ?  <Link  className="text-gray-900 dark:text-white hover:underline" aria-current="page">Show Users</Link>: <Link href="#" className="text-gray-900 dark:text-white hover:underline" aria-current="page">Profile</Link>}
+                {isAdmin ?  <Link  className="text-gray-900 dark:text-white hover:underline" aria-current="page">Users</Link>: <Link href="#" className="text-gray-900 dark:text-white hover:underline" aria-current="page">Profile</Link>}
                 </li>
            
             </ul>
