@@ -1,5 +1,5 @@
-import User from "../database/models/userModel.js";
-import handelErrors from "../middlewares/errorHandlers.js";
+import User from "../../database/models/userModel.js";
+import handelErrors from "../../middlewares/errorHandlers.js";
  
 const findUser = async (email) =>{
     try {

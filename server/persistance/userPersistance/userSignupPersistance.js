@@ -1,4 +1,4 @@
-import User from "../database/models/userModel.js";
+import User from "../../database/models/userModel.js";
 
 const  userSignupPersistance = async (userName,email,password)=>{
     try {

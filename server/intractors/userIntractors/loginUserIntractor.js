@@ -1,7 +1,7 @@
-import findUser from "../persistance/findUserByEmailPersistance.js";
-import comparePassword from "./helpers/passwordCompare.js";
+import findUser from "../../persistance/userPersistance/findUserByEmailPersistance.js";
+import comparePassword from "../helpers/passwordCompare.js";
 
-const userLoginIntractor= async(email,password)=>{
+const userLoginIntractor = async(email,password)=>{
  const user = await findUser(email)
  if(user.status){
    const checkPassword = await comparePassword(password,user.password)

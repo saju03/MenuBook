@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser';
 import helmet from "helmet";
 import dotenv from 'dotenv'
 import { userRouter } from "./userRoutes/userRoutes.js";
+import { adminRouter } from "./adminRoutes/adminRoutes.js";
 import connectDB from "./database/connection.js";
 
     const app = express()
@@ -20,6 +21,7 @@ import connectDB from "./database/connection.js";
     }))
     
     app.use('/',userRouter)
+    app.use('/admin',adminRouter)
     app.use(morgan('dev'));
 
     app.use(express.urlencoded({ extended: true }));

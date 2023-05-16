@@ -1,5 +1,5 @@
 import decode from '../intractors/helpers/decodeCookie.js';
-import findUser from '../persistance/findUserByIDPersistance.js';
+import findUser from '../persistance/userPersistance/findUserByIDPersistance.js';
 const authenticateUser = async (req,res) => {
     try {
         const decodedCookie = await decode(req.cookies.user_jwt)

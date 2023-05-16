@@ -1,5 +1,5 @@
-import signupUserInteractor from '../intractors/signupUserInteractor.js';
-import userLoginIntractor from '../intractors/loginUserIntractor.js';
+import signupUserInteractor from '../intractors/userIntractors/signupUserInteractor.js';
+import userLoginIntractor from '../intractors/userIntractors/loginUserIntractor.js';
 import createToken from '../intractors/helpers/createToken.js';
 
 const userSignup = async (req,res,next)=>{

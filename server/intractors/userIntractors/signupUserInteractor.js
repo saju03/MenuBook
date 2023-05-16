@@ -1,7 +1,7 @@
-import userSignupPersistance from "../persistance/userSignupPersistance.js"
-import hashPassword from "./helpers/hashPassword.js"
-import createToken from "./helpers/createToken.js"
-import handelErrors from "../middlewares/errorHandlers.js"
+import userSignupPersistance from "../../persistance/userPersistance/userSignupPersistance.js"
+import hashPassword from "../helpers/hashPassword.js"
+import createToken from "../helpers/createToken.js"
+import handelErrors from "../../middlewares/errorHandlers.js"
 
 
 const signupUserInteractor = async (userName,email,password)=>{
