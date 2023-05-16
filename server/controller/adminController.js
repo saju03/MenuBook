@@ -1,8 +1,9 @@
 import adminLoginIntractor from "../intractors/adminIntractors/adminLoginIntractor.js"
+import getAllusers from "../intractors/adminIntractors/getAllUserIntractor.js"
 import createToken from "../intractors/helpers/createToken.js"
 
 const adminLogin =async (req,res,next)=>{
-    const {email,password} =req.body
+    const {email,password} = req.body
 
       const adminLogin = await adminLoginIntractor(email,password)
       if(adminLogin.status){
@@ -22,4 +23,12 @@ const adminLogin =async (req,res,next)=>{
    
 }
 
-export {adminLogin}
+const getAlluser = async (req,res,next)=>{
+
+    const data = await getAllusers()
+   
+    res.status(200).json({data:data})
+}
+
+
+export {adminLogin , getAlluser}

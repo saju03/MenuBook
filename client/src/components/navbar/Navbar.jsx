@@ -33,6 +33,7 @@ const Navbar = ()=>{
     const logoutUser = (e)=>{
         e.preventDefault()
         removeCookie("user_jwt")
+        navigate('/login')
     }
 
     return(
@@ -47,7 +48,7 @@ const Navbar = ()=>{
         </a>
         <div className="flex items-center">
             <Link to="tel:5541251234" className="mr-6 text-sm  text-gray-500 dark:text-white hover:underline">(555) 412-1234</Link>
-            {isAdmin ? <Link to='/admin/login' className="text-sm  text-blue-600 dark:text-blue-500 hover:underline" onClick={logoutAdmin}>{adminLoggedIn ? 'ALogout' : 'ALogin'}</Link> : <Link to='/login' className="text-sm  text-blue-600 dark:text-blue-500 hover:underline" onClick={logoutUser}>{userLoggedIn ? 'Logout' : 'Login'}</Link>}
+            {isAdmin ? <Link to='/admin/login' className="text-sm  text-blue-600 dark:text-blue-500 hover:underline" onClick={logoutAdmin}>{adminLoggedIn ? 'ALogout' : 'ALogin'}</Link> : <Link to='/login' className="text-sm  text-blue-600 dark:text-blue-500 hover:underline"   onClick={logoutUser}>{userLoggedIn ? 'Logout' : 'Login'}</Link>}
           
         </div>
     </div>
